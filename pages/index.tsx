@@ -17,8 +17,6 @@ const Home: NextPage = ({ pokemons, nextPage }: any) => {
   const [pokemonsTemp, setPokemonsTemp] = useState<any>(pokemons)
 
   const handleObserver = useCallback((entries) => {
-    console.log('entries', entries)
-
     const target = entries[0]
     if (target.isIntersecting) {
       PokemonService.getPokemons({ url: nextPageUrl }).then(({ pokemons, nextPage }: any) => {

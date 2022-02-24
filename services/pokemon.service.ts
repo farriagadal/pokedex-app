@@ -4,7 +4,6 @@ import api from 'api'
 
 const getPokemons = ({ url }: any) => new Promise((resolve, reject) => {
   const urlTemp = url || '/pokemon'
-  // console.log('urlTemp', urlTemp)
   api.get(urlTemp)
     .then((response: any) => {
       resolve({ pokemons: response.results, nextPage: response.next })
@@ -17,12 +16,9 @@ const getPokemons = ({ url }: any) => new Promise((resolve, reject) => {
 const getPokemonByName = (name: string) => new Promise<any>((resolve, reject) => {
   api.get(`/pokemon/${name}`)
     .then((response: any) => {
-      console.log('dddddddd', response)
-
       resolve({ pokemon: response })
     })
     .catch((err) => {
-      console.log('err sssssssss', err)
       reject(err)
     })
 })

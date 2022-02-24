@@ -8,7 +8,6 @@ import PokemonImage from 'components/PokemonImage'
 import Message from 'components/Message'
 
 const PokemonDetail: NextPage = ({ pokemon }: any) => {
-  console.log('road to pokemon detail', pokemon)
   const router = useRouter()
   const { name } = router.query
   return (
@@ -34,10 +33,10 @@ export async function getServerSideProps (context: any) {
     const { pokemon } = await PokemonService.getPokemonByName(name)
     data = pokemon
   } catch (err) {
-    console.log('errorrrr', err)
+    console.log(err)
   }
   return {
-    props: { pokemon: data }// will be passed to the page component as props
+    props: { pokemon: data }
   }
 }
 
