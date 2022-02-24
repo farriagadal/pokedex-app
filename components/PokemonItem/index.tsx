@@ -9,7 +9,7 @@ export default function PokemonItem ({ pokemon }: any) {
   const [pokemonDetail, setPokemonDetail] = useState<any>({})
 
   useEffect(() => {
-    PokemonService.getPokemonDetail(pokemon.url).then(({ pokemon }: any) => {
+    PokemonService.getPokemonByUrl(pokemon.url).then(({ pokemon }: any) => {
       setPokemonDetail(pokemon)
     })
   }, [])
@@ -17,11 +17,11 @@ export default function PokemonItem ({ pokemon }: any) {
   return (
     <Link href={`/pokemon/${pokemon.name}`}>
       <Card>
-      <img src={pokemonDetail.sprites?.front_default || '/'} alt="" />
-      <Header>
-        <span>{String(pokemonDetail.id).padStart(3, '0')}</span>
-        <p>{pokemon.name}</p>
-      </Header>
+        <img src={pokemonDetail.sprites?.front_default || '/'} alt="" />
+        <Header>
+          <span>#{String(pokemonDetail.id).padStart(3, '0')}</span>
+          <p>{pokemon.name}</p>
+        </Header>
       </Card>
     </Link>
   )

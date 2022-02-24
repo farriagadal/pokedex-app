@@ -4,7 +4,7 @@ import api from 'api'
 
 const getPokemons = ({ url }: any) => new Promise((resolve, reject) => {
   const urlTemp = url || '/pokemon'
-  console.log('urlTemp', urlTemp)
+  // console.log('urlTemp', urlTemp)
   api.get(urlTemp)
     .then((response: any) => {
       resolve({ pokemons: response.results, nextPage: response.next })
@@ -14,7 +14,19 @@ const getPokemons = ({ url }: any) => new Promise((resolve, reject) => {
     })
 })
 
-const getPokemonDetail = (url: string) => new Promise((resolve, reject) => {
+const getPokemonByName = (name: string) => new Promise((resolve, reject) => {
+  api.get(`/pokemon/${name}`)
+    .then((response: any) => {
+      console.log('dddddddd', response)
+
+      resolve({ pokemon: response })
+    })
+    .catch((err) => {
+      reject(err)
+    })
+})
+
+const getPokemonByUrl = (url: string) => new Promise((resolve, reject) => {
   api.get(url)
     .then((response: any) => {
       resolve({ pokemon: response })
@@ -26,5 +38,6 @@ const getPokemonDetail = (url: string) => new Promise((resolve, reject) => {
 
 export default {
   getPokemons,
-  getPokemonDetail
+  getPokemonByName,
+  getPokemonByUrl
 }
