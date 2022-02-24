@@ -4,14 +4,16 @@ export const Card = styled('div', {
   background: 'linear-gradient(55.56deg, #FC7CFF 0%, #FA5AFD 100%)',
   borderRadius: 20,
   minHeight: 205,
-  cursor: 'pointer',
   padding: '0 14px 13px 16px',
   position: 'relative',
   img: {
     width: 'calc(100% - 14px - 16px)',
     position: 'absolute',
     top: '50%',
-    transform: 'translateY(-50%)'
+    transform: 'translateY(-50%) scale(1)',
+    '@minSm': {
+      transform: 'translateY(-50%) scale(0.8)'
+    }
   }
 })
 

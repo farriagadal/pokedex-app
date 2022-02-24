@@ -17,6 +17,8 @@ const Home: NextPage = ({ pokemons, nextPage }: any) => {
   const [pokemonsTemp, setPokemonsTemp] = useState<any>(pokemons)
 
   const handleObserver = useCallback((entries) => {
+    console.log('entries', entries)
+
     const target = entries[0]
     if (target.isIntersecting) {
       PokemonService.getPokemons({ url: nextPageUrl }).then(({ pokemons, nextPage }: any) => {
@@ -30,7 +32,7 @@ const Home: NextPage = ({ pokemons, nextPage }: any) => {
   useEffect(() => {
     const option = {
       root: null,
-      rootMargin: '-10px',
+      rootMargin: '0px',
       threshold: 0
     }
     const observer = new IntersectionObserver(handleObserver, option)

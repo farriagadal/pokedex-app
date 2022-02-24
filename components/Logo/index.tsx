@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function Logo () {
   return (
     <LogoContainer>
-      <Link href="/home">
+      <Link href="/">
         <a>
           <Image src="/images/pokemon-logo.png" alt="" width={252} height={95} />
         </a>

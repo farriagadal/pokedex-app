@@ -14,7 +14,7 @@ const getPokemons = ({ url }: any) => new Promise((resolve, reject) => {
     })
 })
 
-const getPokemonByName = (name: string) => new Promise((resolve, reject) => {
+const getPokemonByName = (name: string) => new Promise<any>((resolve, reject) => {
   api.get(`/pokemon/${name}`)
     .then((response: any) => {
       console.log('dddddddd', response)
@@ -22,6 +22,7 @@ const getPokemonByName = (name: string) => new Promise((resolve, reject) => {
       resolve({ pokemon: response })
     })
     .catch((err) => {
+      console.log('err sssssssss', err)
       reject(err)
     })
 })
