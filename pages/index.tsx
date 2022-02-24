@@ -3,7 +3,7 @@ import { useEffect, useCallback, useRef, useState } from 'react'
 import type { NextPage } from 'next'
 // import Head from 'next/head'
 import PokemonList from 'components/PokemonList'
-import InputText from 'components/InputText'
+import InputSearch from 'components/InputSearch'
 import PokemonService from 'services/pokemon.service'
 
 // type HomeProps = {
@@ -41,7 +41,7 @@ const Home: NextPage = ({ pokemons, nextPage }: any) => {
 
   return (
     <div>
-      <InputText placeholder="Buscar Pokémon" />
+      <InputSearch placeholder="Buscar Pokémon" />
       <PokemonList pokemons={pokemonsTemp} />
       <div ref={loader} />
     </div>

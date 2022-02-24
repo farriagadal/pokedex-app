@@ -49,7 +49,9 @@ export const Category = styled('div', {
   width: '100%',
   marginTop: 22,
   marginBottom: 10,
+  textTransform: 'capitalize',
   span: {
+    textTransform: 'capitalize',
     color: '#fff',
     display: 'flex',
     alignItems: 'center',
@@ -57,6 +59,9 @@ export const Category = styled('div', {
     height: 38,
     background: 'rgba(252, 166, 0, 0.97)',
     boxShadow: '0px 51px 80px rgba(0, 0, 0, 0.07), 0px 25.5249px 40.0391px rgba(0, 0, 0, 0.0532233), 0px 15.375px 24.1177px rgba(0, 0, 0, 0.0456112), 0px 9.85311px 15.4559px rgba(0, 0, 0, 0.0399626), 0px 6.38599px 10.0172px rgba(0, 0, 0, 0.035), 0px 4.01991px 6.30574px rgba(0, 0, 0, 0.0300374), 0px 2.30969px 3.62304px rgba(0, 0, 0, 0.0243888), 0px 1.01655px 1.59459px rgba(0, 0, 0, 0.0167767)',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    '&:last-child': {
+      background: 'rgba(0, 131, 252, 0.46)'
+    }
   }
 })

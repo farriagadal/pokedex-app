@@ -13,8 +13,8 @@ export default function PokemonImage ({ pokemon }: any) {
         <img src={pokemon.sprites?.front_default || '/'} alt="" />
       </Card>
       <Category>
-        <span>Fuego</span>
-        <span>Volador</span>
+        { pokemon.types[0]?.type.name && <span>{ pokemon.types[0].type.name }</span>}
+        { pokemon.types[1]?.type.name && <span>{ pokemon.types[1].type.name }</span>}
       </Category>
     </>
 

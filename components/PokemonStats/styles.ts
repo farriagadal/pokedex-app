@@ -24,7 +24,8 @@ export const Item = styled('div', {
   p: {
     fontWeight: 'bold',
     fontSize: '16px',
-    color: 'rgba(255, 255, 255, 0.56)'
+    color: 'rgba(255, 255, 255, 0.56)',
+    textTransform: 'capitalize'
   }
 })
 

@@ -1,6 +1,7 @@
 
 import type { NextPage } from 'next'
-import InputText from 'components/InputText'
+import { useRouter } from 'next/router'
+import InputSearch from 'components/InputSearch'
 import PokemonService from 'services/pokemon.service'
 import PokemonStats from 'components/PokemonStats'
 import PokemonImage from 'components/PokemonImage'
@@ -8,9 +9,11 @@ import Message from 'components/Message'
 
 const PokemonDetail: NextPage = ({ pokemon }: any) => {
   console.log('road to pokemon detail', pokemon)
+  const router = useRouter()
+  const { name } = router.query
   return (
     <div>
-      <InputText placeholder="Buscar Pokémon" />
+      <InputSearch placeholder="Buscar Pokémon" />
       { pokemon.id
         ? (
         <>
@@ -18,7 +21,7 @@ const PokemonDetail: NextPage = ({ pokemon }: any) => {
           <PokemonStats pokemon={pokemon} />
         </>
           )
-        : <Message>Pokemon no encontrado</Message>
+        : <Message>Pokémon {`"${name}"`} no encontrado</Message>
       }
     </div>
   )

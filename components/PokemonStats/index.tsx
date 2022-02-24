@@ -10,29 +10,29 @@ export default function PokemonStats ({ pokemon }: any) {
         <List>
           <Item>
             <label>Altura</label>
-            <p>1,7 m</p>
+            <p>{ pokemon.height }  ft</p>
           </Item>
           <Item>
             <label>Categoría</label>
-            <p>1,7 m</p>
+            <p>{ pokemon.types[0].type.name }</p>
           </Item>
           <Item>
-            <label>Debilidad</label>
-            <p>1,7 m</p>
+            <label>Ataque base</label>
+            <p>{ pokemon.stats[1].base_stat }</p>
           </Item>
           <Item>
             <label>Peso</label>
-            <p>1,7 m</p>
+            <p>{ pokemon.weight } kg</p>
           </Item>
           <Item>
-            <label>Sexo</label>
-            <p>1,7 m</p>
+            <label>Vida base</label>
+            <p>{ pokemon.stats[0].base_stat } HP</p>
           </Item>
         </List>
         <List>
           <Item>
             <label>Habilidades</label>
-            <p>Mar Llamas</p>
+            <p>{ pokemon.moves[0].move.name }</p>
           </Item>
         </List>
         <ImageContainer>
